@@ -1011,18 +1011,29 @@ function getBooksByTitle(books, title) {
     return null;
 }
 
-var title = getBooksByTitle("The Divine Comedy");
-console.log(getBooksByTitle(books, title));
+// var title = getBooksByTitle("The Divine Comedy");
+// console.log(getBooksByTitle(books, title));
 
-function getBookByAuthor(books, author) {
-    for (let index = 0; index < books.length; index++) {
-        var singleBook = books[index];
-        if (singleBook.author.toLowerCase() === author.toLowerCase()) {
-            return singleBook;
-        }
+// function getBookByAuthor(books, author) {
+//     for (let index = 0; index < books.length; index++) {
+//         var singleBook = books[index];
+//         if (singleBook.author.toLowerCase() === author.toLowerCase()) {
+//             return singleBook;
+//         }
+//     }
+//     return null;
+// }
+
+// var author = getBookByAuthor("Giovanni Boccaccio");
+// console.log(getBookByAuthor(books, author));
+
+function editBookByTitle(title, numberOfPages,booksArray) { // prop = year value = "1985" // // prop = title value = "Yuval hambulbal"
+    if(typeof title !== 'string') return;
+    if(isNaN(Number(numberOfPages))) return;
+    if(!Array.isArray(booksArray))
+    
+    var singleBook = books.find(function (currentBook) { return currentBook.title.toLowerCase() === title.toLowerCase() })
+    if(singleBook){
+        singleBook.pages=numberOfPages
     }
-    return null;
 }
-
-var author = getBookByAuthor("Giovanni Boccaccio");
-console.log(getBookByAuthor(books, author));
